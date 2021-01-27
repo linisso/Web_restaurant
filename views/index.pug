@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  main#indexmain
+    div#betterback1.betterback
+      a#index-res(href="/guest/create") Reserve a table
+      a#index-list(href="/guest_all") View all reservations
+      div#form-wrapper
+        span#searchspan Find a reservation by ID
+        form#search_form(action="" method="GET")
+          input#resid(type="text", placeholder="Unique identifier for your reservation")
+          button#searchbutton(type='submit') Find
+        
+  script
+    include ../public/javascripts/find_by_id.js

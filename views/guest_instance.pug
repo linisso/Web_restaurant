@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  main
+    div.betterback#betterback3
+      if guest_info
+        a#guestid(href=guest_info.url)= guest_info._id
+        span#blinking_text Unique reservation number, remember it for submitting or canceling / changing your reservation
+        div.user_data
+          ul Reservation details:
+            li= 'Name: '+guest_info.first_name
+            li= 'Surname: '+guest_info.second_name
+            li= 'Date: '+guest_info.date_of_reservation_formatted
+            li= 'Location: '+guest_info.table
+            li= 'Time: '+guest_info.time_of_reservation
+
+        div.res_management
+          form#deleteform(action=guest_info.url+'/delete' method="POST")
+            button#deletebut.manage_btn(type='submit') Cancel reservation
+          
+          form#updateform(action=guest_info.url+'/update' method="GET")
+            button#updatebut.manage_btn(type='submit') Change reservation
+
+      if !guest_info
+        h2= error

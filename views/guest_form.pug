@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  main
+    div.betterback#betterback2
+      form#guest_form(method='POST' action='')
+        div#first_name_wrapper
+          label#first_name_label(for="first_name") Name:
+          input#first_name(type='text', placeholder='Your name', name='first_name', required='true', value=(undefined===guest ? '' : guest.first_name))
+        div#second_name_wrapper
+          label#second_name_label(for="second_name") Surname:
+          input#second_name_input(type='text', placeholder='Your surname', name='second_name', required='true', value=(undefined===guest ? '' : guest.second_name))
+        div#date_wrapper
+          label#date_label(for="date_of_reservation") Date:
+          input#date_input(type="date", name="date_of_reservation", required='true', value=(undefined===guest ? '' : guest.date_of_reservation_formatted))
+        div.dropdown_wrapper#table_dropdown
+          label(for="#table_selector") Select a Location:
+          select#table_selector(name="table")
+            each table in tables
+              if guest
+                if table === guest.table
+                  option.table_option(value=table name='table' id=table class='table' selected) #{table}
+                else
+                  option.table_option(value=table name='table' id=table class='table') #{table}
+
+              if !guest
+                option.table_option(value=table name='table' id=table class='table') #{table}
+
+        //- div#table_list.form_list
+        //-   ul Select a Location:     
+        //- div.radio_wrapper
+        //-   for table in tables
+        //-     if guest
+        //-       if table=== guest.table
+        //-         div.form_radio
+        //-           input(type="radio", name='table', class='table', id=table, value=table, required, checked)
+        //-           label(for=table class='table_label') #{table}
+        //-       else
+        //-         div.form_radio
+        //-           input(type="radio", name='table', class='table', id=table, required, value=table )
+        //-           label(for=table class='table_label') #{table}
+        //-     if !guest
+        //-       div.form_radio
+        //-         input(type="radio", name='table', class='table', id=table, required, value=table )
+        //-         label(for=table class='table_label') #{table}
+        div.dropdown_wrapper#time_dropdown
+          label(for="#time_selector") Time:
+          select#time_selector(name="time")
+            each time in times
+              if guest
+                if time === guest.time_of_reservation
+                  option.time_option(value=time name='time' id=time selected) #{time}
+                else
+                  option.time_option(value=time name='time' id=time) #{time}
+
+              if !guest
+                option.time_option(value=time name='time' id=time) #{time}
+
+        //- div#time_list.form_list
+        //-   ul Time:
+        //- div.radio_wrapper
+        //-   for time in times
+        //-     if guest
+        //-       if time === guest.time_of_reservation
+        //-         div.form_radio
+        //-           input(type="radio", name='time', id=time, value=time, required, checked)
+        //-           label(for=time) #{time}
+        //-       else
+        //-         div.form_radio
+        //-           input(type="radio", name='time', id=time, required, value=time )
+        //-           label(for=time) #{time}
+        //-     if !guest
+        //-       div.form_radio
+        //-         input(type="radio", name='time', id=time, required, value=time )
+        //-         label(for=time) #{time}
+        button#submitter(type='submit') Send
+
+        if errors
+          ul
+            for error in errors
+              li(style='color: red;')= error
+
+  script
+    include ../public/javascripts/datescript.js

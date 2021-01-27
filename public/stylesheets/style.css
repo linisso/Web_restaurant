@@ -1,0 +1,277 @@
+body {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/back.jpg') 60% 50%;
+}
+
+a {
+  color: white;
+}
+
+header {
+  flex-basis: 20%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(160, 82, 45);
+  color: rgb(19, 19, 0);
+}
+
+
+#restaurant,
+#working-hours {
+  flex-basis: 20%;
+  text-align: right;
+  padding-top: 3%;
+  font-size: 2em;
+  font-style: Bradley Hand, cursive, sans-serif;
+}
+#restname {
+  padding-top: 2%;
+  flex-basis: 60%;
+  text-align: center;
+  font-size: 4em;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+}
+#working-hours { 
+text-align: left; 
+}
+
+footer {
+  flex-basis: 5%;
+  background: rgb(139, 69, 19);
+  color: rgb(19, 19, 0);
+  display: flex;
+  justify-content: space-around;
+  font-family: Bradley Hand, cursive, sans-serif;
+}
+
+#home, #phone, #address {
+  padding-top: 0.2%;
+  color: black;
+}
+
+#address {
+  flex-basis: 30%;
+}
+
+#home {
+  flex-basis: 30%;
+  text-decoration: none;
+  text-align: center;
+}
+
+#phone {
+  flex-basis: 30%;
+  text-decoration: none;
+  text-align: right;
+}
+
+main {
+  font-size: 1.5em;
+  flex-basis: 75%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(19, 19, 0);
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+
+
+#indexmain {
+  font-size: 2em;
+}
+
+.betterback {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 30px;
+}
+
+#betterback1 {
+  height: 60%;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Bradley Hand, sans-serif;
+}
+
+#index-res,
+#index-list {
+  flex-basis: 10%;
+}
+
+#form-wrapper {
+  flex-basis: 30%;
+}
+
+#search_form {
+  display: flex;
+  justify-content: space-around;
+}
+
+#resid {
+  flex-basis: 80%;
+  height: 5vh;
+  border-radius: 10px;
+
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: none;
+
+
+  outline: none;
+  font-size: 0.5em;
+  font-family: Bradley Hand, cursive, sans-serif;
+}
+
+#searchbutton {
+  border-radius: 10px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: none;
+  background-color: rgb(160, 82, 45);
+  font-family: Bradley Hand, cursive, sans-serif;
+  color: white:
+  outline: none;
+
+}
+
+
+#betterback2 {
+  height: 95%;
+  flex-basis: 40%;
+  justify-content: center;
+}
+
+#guest_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Bradley Hand, cursive, sans-serif;
+}
+
+#first_name,
+#second_name_input,
+#date_input {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: Bradley Hand, cursive, sans-serif;
+}
+
+#first_name_wrapper,
+#second_name_wrapper,
+#date_wrapper {
+  padding-bottom: 5px;
+  display: flex;
+  color: white;
+}
+
+#first_name,
+#second_name_input {
+  width: 25vw;
+}
+
+
+.radio_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form_radio input[type=radio] {
+  display: none;
+}
+
+.form_radio label {
+  cursor: pointer;
+  border: 1px solid black;
+  border-right: none;
+  user-select: none;
+  background: rgb(255, 248, 220);
+  padding: 0 5px 0 5px;
+}
+
+.radio_wrapper .form_radio:first-child label {
+  border-radius: 6px 0 0 6px;
+}
+
+.radio_wrapper .form_radio:last-child label {
+  border-radius: 0 6px 6px 0;
+  border-right: 1px solid black;
+}
+
+.radio_wrapper input[type=radio]:checked + label {
+  background: rgb(255, 248, 220);
+  color: black;
+}
+
+.form_list {
+  font-size: 0.7em;
+}
+
+.form_list ul {
+  list-style-type: none;
+  display: flex;
+}
+
+#submitter {
+  margin-top: 20px;
+  width: 20%;
+  height: 6vh;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 0.5em;
+}
+
+#guestid {
+  text-align: center;
+}
+
+#blinking_text {
+  text-align: center;
+  color: rgb(255, 222, 173);
+}
+
+#betterback3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+.res_management {
+  display: flex;
+  justify-content: space-around;
+}
+
+.manage_btn {
+  border: 1px solid black;
+  outline: none;
+  height: 5vh;
+}
+
+#deletebut {
+border-radius: 10px;
+}
+
+#updatebut {
+border-radius: 10px;
+} 
+
